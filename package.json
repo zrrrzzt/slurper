@@ -1,6 +1,6 @@
 {
   "name": "slurper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description":"Downloading an image by specifying it's id",
   "main": "index.js",
   "scripts": {
