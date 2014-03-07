@@ -2,15 +2,23 @@ var fs = require('fs')
   , request = require('request')
   , cheerio = require('cheerio');
 
-module.exports = function(pageUrl, imgId, fileName){
+module.exports = function(pageUrl, fileId, fileName){
 
   function saveFile(fileUrl, fileName) {
     request(fileUrl).pipe(fs.createWriteStream(fileName));
   }
 
-  function parseForFileUrl(body, fileId){
-    var $ = cheerio.load(body);
-    return $(fileId).attr('src');
+  function parseForFileUrl(body, fileId, callback){
+
+    var $ = cheerio.load(body)
+      , fileUrl = $(fileId).attr('src');
+
+    if(!fileUrl){
+      return callback(new Error('No fileUrl found'), null);
+    } else {
+      return callback(null, fileUrl);
+    }
+
   }
 
   function getPageBody(url, callback){
@@ -30,7 +38,7 @@ module.exports = function(pageUrl, imgId, fileName){
       console.log(err);
     }
 
-    var fileUrl = parseForFileUrl(body, imgId);
+    var fileUrl = parseForFileUrl(body, fileId);
 
     if(fileUrl){
       saveFile(fileUrl, fileName);
