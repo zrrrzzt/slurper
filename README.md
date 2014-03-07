@@ -1,4 +1,4 @@
-#slurper#
+#Slurper#
 
 Node module for downloading an image from a webpage by specifying it's id.
 
