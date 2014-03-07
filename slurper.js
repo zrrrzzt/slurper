@@ -36,14 +36,14 @@ module.exports = function(pageUrl, fileId, fileName){
   getPageBody(pageUrl, function(err, body){
     if(err) {
       console.log(err);
-    }
-
-    var fileUrl = parseForFileUrl(body, fileId);
-
-    if(fileUrl){
-      saveFile(fileUrl, fileName);
     } else {
-      console.log('Error: ' + fileUrl);
+      parseForFileUrl(body, fileId, function(err, fileUrl){
+        if(err){
+          console.log(err);
+        } else {
+          saveFile(fileUrl);
+        }
+      })
     }
 
   });
