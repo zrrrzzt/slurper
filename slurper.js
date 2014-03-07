@@ -4,13 +4,13 @@ var fs = require('fs')
 
 module.exports = function(pageUrl, imgId, fileName){
 
-  function saveImage(imageUrl, fileName) {
-    request(imageUrl).pipe(fs.createWriteStream(fileName));
+  function saveFile(fileUrl, fileName) {
+    request(fileUrl).pipe(fs.createWriteStream(fileName));
   }
 
-  function parseForImageUrl(body, imgId){
+  function parseForFileUrl(body, fileId){
     var $ = cheerio.load(body);
-    return $(imgId).attr('src');
+    return $(fileId).attr('src');
   }
 
   function getPageBody(url, callback){
@@ -27,15 +27,15 @@ module.exports = function(pageUrl, imgId, fileName){
 
   getPageBody(pageUrl, function(err, body){
     if(err) {
-      throw err;
+      console.log(err);
     }
 
-    var imgUrl = parseForImageUrl(body, imgId);
+    var fileUrl = parseForFileUrl(body, imgId);
 
-    if(imgUrl){
-      saveImage(imgUrl, fileName);
+    if(fileUrl){
+      saveFile(fileUrl, fileName);
     } else {
-      console.log('Error: ' + imgUrl);
+      console.log('Error: ' + fileUrl);
     }
 
   });
