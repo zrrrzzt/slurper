@@ -41,7 +41,7 @@ module.exports = function(pageUrl, fileId, fileName){
         if(err){
           console.log(err);
         } else {
-          saveFile(fileUrl);
+          saveFile(fileUrl, fileName);
         }
       })
     }
