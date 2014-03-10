@@ -30,22 +30,21 @@ module.exports = function(pageUrl, fileId, fileName){
       if (!error && response.statusCode == 200) {
         return callback(null, body.toString());
       }
-    })
+    });
   }
 
   getPageBody(pageUrl, function(err, body){
     if(err) {
-      console.log(err);
+      console.error(err);
     } else {
       parseForFileUrl(body, fileId, function(err, fileUrl){
         if(err){
-          console.log(err);
+          console.error(err);
         } else {
           saveFile(fileUrl, fileName);
         }
-      })
+      });
     }
-
   });
 
-}
+};
