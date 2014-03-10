@@ -4,7 +4,14 @@ var slurper = require('./slurper')
   , argv = require('minimist')(process.argv.slice(2))
   , pageUrl = argv.url
   , id = argv.id
-  , filename = argv.filename || 'image.gif';
+  , filename = argv.filename
+  , version = argv.version;
+
+if (version){
+  var package = require('./package.json');
+  console.log(package.version);
+  return;
+}
 
 if(pageUrl && id && filename){
   slurper(pageUrl, id, filename);
