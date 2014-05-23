@@ -4,7 +4,7 @@ Node CLI app for downloading an image from a webpage by specifying it's id.
 
 ##Usage
 
-You'll need Node.js and NPM.
+You'll need Node.js and npm.
 
 ###Install###
 To install globally use ```-g```
