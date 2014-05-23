@@ -6,4 +6,6 @@ var request = require('request')
 
 module.exports = function getFileUrl(opts, callback){
 
+  return callback(null, {});
+
 }
