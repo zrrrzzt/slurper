@@ -25,4 +25,18 @@ describe('Slurper - outputs', function(){
 
   });
 
+  it('Should return a file url', function(done){
+
+    var opts = {url:'http://www.dagbladet.no/tegneserie/lunch/', id:'#lunch-stripe'};
+
+    getFileUrl(opts, function(err, data){
+      if(err){
+        throw err;
+      }
+      assert(data);
+      done();
+    });
+
+  });
+
 });
