@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs')
   , request = require('request')
   , cheerio = require('cheerio');
