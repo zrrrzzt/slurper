@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 
 var slurper = require('./slurper')
   , argv = require('minimist')(process.argv.slice(2))
