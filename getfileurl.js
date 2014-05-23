@@ -10,6 +10,10 @@ module.exports = function getFileUrl(opts, callback){
     return callback(new Error('Missing required param: url'), null);
   }
 
+  if(!opts.id){
+    return callback(new Error('Missing required param: id'), null);
+  }
+
   return callback(null, {});
 
 }
