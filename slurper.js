@@ -2,7 +2,7 @@ var fs = require('fs')
   , request = require('request')
   , cheerio = require('cheerio');
 
-module.exports = function(pageUrl, fileId, fileName){
+module.exports = function doSlurp(pageUrl, fileId, fileName){
 
   function saveFile(fileUrl, fileName) {
     request(fileUrl).pipe(fs.createWriteStream(fileName));
