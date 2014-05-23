@@ -9,8 +9,8 @@ var slurper = require('./slurper')
   , version = argv.version;
 
 if (version){
-  var package = require('./package.json');
-  console.log(package.version);
+  var pkg = require('./package.json');
+  console.log(pkg.version);
   return;
 }
 

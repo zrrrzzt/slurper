@@ -1,52 +1,28 @@
 'use strict';
 
-var fs = require('fs')
+var getFileUrl = require('./getfileurl')
   , request = require('request')
-  , cheerio = require('cheerio');
+  ;
+
+function saveFile(fileUrl, fileName) {
+  request(fileUrl).pipe(fs.createWriteStream(fileName));
+}
 
 module.exports = function doSlurp(pageUrl, fileId, fileName){
 
-  function saveFile(fileUrl, fileName) {
-    request(fileUrl).pipe(fs.createWriteStream(fileName));
-  }
-
-  function parseForFileUrl(body, fileId, callback){
-
-    var $ = cheerio.load(body)
-      , fileUrl = $(fileId).attr('src');
-
-    if(!fileUrl){
-      return callback(new Error('No fileUrl found'), null);
-    } else {
-      return callback(null, fileUrl);
-    }
-
-  }
-
-  function getPageBody(url, callback){
-    request(url, function (error, response, body) {
-      if(error){
-        return callback(error, null);
+  var opts = {
+        url:pageUrl,
+        id:fileId
       }
+    ;
 
-      if (!error && response.statusCode == 200) {
-        return callback(null, body.toString());
-      }
-    });
-  }
-
-  getPageBody(pageUrl, function(err, body){
-    if(err) {
+  getFileUrl(opts, function(err,fileUrl){
+    if(err){
       console.error(err);
     } else {
-      parseForFileUrl(body, fileId, function(err, fileUrl){
-        if(err){
-          console.error(err);
-        } else {
-          saveFile(fileUrl, fileName);
-        }
-      });
+      saveFile(fileUrl, fileName);
     }
+
   });
 
 };
