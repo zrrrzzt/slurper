@@ -1,8 +1,8 @@
-#Slurper#
+#Slurper
 
-Node module for downloading an image from a webpage by specifying it's id.
+Node CLI app for downloading an image from a webpage by specifying it's id.
 
-##Usage##
+##Usage
 
 You'll need Node.js and NPM.
 
