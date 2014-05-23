@@ -1,11 +1,11 @@
 {
   "name": "slurper",
   "version": "0.0.4",
-  "description":"Downloading an image by specifying it's id",
+  "description": "Downloading an image by specifying it's id",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
-    "url":"https://github.com/zrrrzzt"
+    "url": "https://github.com/zrrrzzt"
   },
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,8 @@
     "request": "^2.34.0",
     "cheerio": "^0.13.1",
     "minimist": "0.0.8"
+  },
+  "devDependencies": {
+    "mocha": "^1.19.0"
   }
 }
