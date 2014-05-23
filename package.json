@@ -23,9 +23,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "request": "^2.34.0",
     "cheerio": "^0.13.1",
-    "minimist": "0.0.8"
+    "minimist": "^0.1.0",
+    "request": "^2.34.0"
   },
   "devDependencies": {
     "mocha": "^1.19.0"
