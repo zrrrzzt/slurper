@@ -1,4 +1,4 @@
-#Slurper
+#Slurper [![Build Status](https://travis-ci.org/zrrrzzt/slurper.svg?branch=master)](https://travis-ci.org/zrrrzzt/slurper)
 
 Node CLI app for downloading an image from a webpage by specifying it's id.
 
