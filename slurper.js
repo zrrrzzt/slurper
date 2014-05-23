@@ -1,7 +1,8 @@
 'use strict';
 
-var getFileUrl = require('./getfileurl')
+var fs = require('fs')
   , request = require('request')
+  , getFileUrl = require('./getfileurl')
   ;
 
 function saveFile(fileUrl, fileName) {
