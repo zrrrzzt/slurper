@@ -8,7 +8,7 @@ describe('Slurper - outputs', function(){
 
   it('Should throw if file url is not found', function(done){
 
-    var opts = {url:'http://www.google.com', id:'#megaman'};
+    var opts = {url:'https://www.npmjs.org', id:'#megaman'};
 
     getFileUrl(opts, function(err, data){
       assert.throws(function(){
