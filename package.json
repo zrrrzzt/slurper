@@ -1,7 +1,7 @@
 {
   "name": "slurper",
-  "version": "0.0.4",
-  "description": "Downloading an image by specifying it's id",
+  "version": "0.0.5",
+  "description": "Download an image by specifying it's id",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
