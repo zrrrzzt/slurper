@@ -1,6 +1,6 @@
 #Slurper [![Build Status](https://travis-ci.org/zrrrzzt/slurper.svg?branch=master)](https://travis-ci.org/zrrrzzt/slurper)
 
-Node CLI app for downloading an image from a webpage by specifying it's id.
+Node CLI app for downloading an image from by specifying it's id.
 
 ##Usage
 
@@ -10,17 +10,37 @@ You'll need Node.js and npm.
 To install globally use ```-g```
 
 ```
-npm install -g slurper
+$ npm install -g slurper
 ```
 
 ###Build
 
 ```
-git clone https://github.com/zrrrzzt/slurper.git
+$ git clone https://github.com/zrrrzzt/slurper.git
 
-cd slurper
+$ cd slurper
 
-npm install
+$ npm install
+```
+
+###Test
+
+Make sure you hav Mocha installed.
+
+```
+$ npm test
+```
+
+###Version
+
+```
+$ slurper -v
+```
+
+###Help
+
+```
+$ slurper -h
 ```
 
 ###Download an image with slurper
