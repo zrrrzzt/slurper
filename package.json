@@ -1,6 +1,6 @@
 {
   "name": "slurper",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Download an image by specifying it's id",
   "author": {
     "name": "Geir Gåsodden",
@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec test/*.js --timeout=10000"
+    "test": "mocha --reporter spec test/*.js"
   },
   "repository": {
     "type": "git",
