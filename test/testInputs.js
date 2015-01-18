@@ -57,7 +57,8 @@ describe('Slurper - inputs', function(){
   it('Should throw if opts.id is not specified', function(done){
 
     var opts = {
-      url:'http://www.google.com'
+      url:'http://www.google.com',
+      id: false
     };
 
     getFileUrl(opts, function(err, data){
