@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 'use strict';
 
-var slurper = require('./slurper')
-  , pkg = require('./package.json')
-  , query = process.argv[2]
-  , argv = require('minimist')(process.argv.slice(2))
-  , pageUrl = argv.url
-  , id = argv.id
-  , filename = argv.filename || 'image.gif'
-  ;
+var slurper = require('./index');
+var pkg = require('./package.json');
+var query = process.argv[2];
+var argv = require('minimist')(process.argv.slice(2));
+var pageUrl = argv.url;
+var id = argv.id;
+var filename = argv.filename || 'image.gif';
+var slurperOptions;
 
 function printHelp() {
   console.log(pkg.description);
   console.log('');
   console.log('Usage:');
-  console.log('  $ slurper <url> --id=#id-for-image --filename=filename.gif');
+  console.log('  $ slurper <url> --id=<#id-for-image> --filename=<filename>');
 }
 
 if (!query || process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
@@ -32,7 +32,18 @@ if (query.indexOf('http') !== -1) {
 }
 
 if(pageUrl && id && filename){
-  slurper(pageUrl, id, filename);
+  slurperOptions = {
+    url: pageUrl,
+    id: id,
+    fileName: filename
+  };
+  slurper(slurperOptions, function(error, data){
+    if(error){
+      console.error(error);
+    } else {
+      console.log(data.message);
+    }
+  });
 } else {
   printHelp();
   return;
