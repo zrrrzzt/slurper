@@ -19,7 +19,7 @@
     "url": "http://github.com/zrrrzzt/slurper/issues"
   },
   "bin": {
-    "slurper": "./index.js"
+    "slurper": "./cli.js"
   },
   "license": "MIT",
   "dependencies": {
