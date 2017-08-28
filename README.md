@@ -1,8 +1,10 @@
-#Slurper [![Build Status](https://travis-ci.org/zrrrzzt/slurper.svg?branch=master)](https://travis-ci.org/zrrrzzt/slurper)
+[![Build Status](https://travis-ci.org/zrrrzzt/slurper.svg?branch=master)](https://travis-ci.org/zrrrzzt/slurper)
+
+# Slurper
 
 Node module/CLI app for downloading an image from by specifying it's id.
 
-##Installation
+## Installation
 
 ```
 $ npm install slurper
@@ -14,7 +16,7 @@ To install globally use ```-g```
 $ npm install -g slurper
 ```
 
-##Usage - module
+## Usage - module
 
 Pass an options object.
 
@@ -51,7 +53,7 @@ Returned data
 }
 ```
 
-##Usage - CLI
+## Usage - CLI
 
 ```
 sluper <url> --id=#id-for-image --filename=filename.gif
@@ -63,20 +65,26 @@ Example
 $ slurper 'http://www.dagbladet.no/tegneserie/lunch/' --id='#lunch-stripe' --filename='lunch.gif'
 ```
 
-Saves the image as lunch.gif and outputs
+Saves the image as lunch.gif
 
 ```
 File download
 ```
 
-###Version
+### Version
 
 ```
 $ slurper -v
 ```
 
-###Help
+### Help
 
 ```
 $ slurper -h
 ```
+
+## License
+
+[MIT](LICENSE)
+
+![Robohash Slurper](https://robots.kebabstudios.party/Slurper.png "Robohash image of Slurper")
