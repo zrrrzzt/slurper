@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cheerio": "0.22.0",
+    "cheerio": "1.2.0",
     "minimist": "1.2.6",
     "request": "2.88.2",
     "valid-url": "1.0.9"
